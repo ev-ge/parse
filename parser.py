@@ -6,14 +6,15 @@ class ParsingWizard():
     def __init__(self):
         now = datetime.datetime.now()
         date = "{}-{}-{}_{}_{}_{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)
-        log = 'C:\\Users\\Administrator\\Desktop\Parse\\logs\\'
+        #log = 'C:\\Users\\Administrator\\Desktop\Parse\\logs\\'
         win32clipboard.OpenClipboard()
         try:
             self.data = win32clipboard.GetClipboardData()
         except:
             win32clipboard.CloseClipboard()
-        with open(log+''+date+'_parse.json','w') as f:
-            f.write(self.data)
+        #with open(log+''+date+'_parse.json','w') as f:
+        #    f.write(self.data)
+        print('No clipboard data found')
         win32clipboard.CloseClipboard()
     def ID_Monster(self):
         count = 0
@@ -86,3 +87,4 @@ class ParsingWizard():
         print('-----------------------------------')
         #print("Please /kick "+" ".join(UnderreqsKick)+ " for being under reqs")
 ParsingWizard().ID_Monster()
+
