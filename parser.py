@@ -12,9 +12,9 @@ class ParsingWizard():
             self.data = win32clipboard.GetClipboardData()
         except:
             win32clipboard.CloseClipboard()
+            print('No clipboard data found')
         #with open(log+''+date+'_parse.json','w') as f:
         #    f.write(self.data)
-        print('No clipboard data found')
         win32clipboard.CloseClipboard()
     def ID_Monster(self):
         count = 0
